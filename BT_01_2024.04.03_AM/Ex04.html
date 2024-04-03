@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ham_mang(a) {
+            console.log("Phần tử trong mảng là: ",a.length);
+            console.log("Tất cả phần tử trong mảng là: ",a.join(","));
+            console.log("Đảo ngược trong mảng là: ",a.reverse());
+            console.log("Sắp xếp trong mảng là: ",a.sort());
+            console.log("Thêm phần tử vào mảng là: ",a.push(6));
+            console.log("Xóa phần tử cuối cùng trong mảng là: ",a.pop());
+            console.log("Xóa phần tử đầu tiên trong mảng là: ",a.shift());
+            console.log("Thêm phần tử vào đầu mảng là: ",a.unshift(0));
+            console.log("Xóa phần tử từ vị trí thứ 2 trong mảng là: ",a.splice(2,1));  
+
+        }
+        var array = [1,2,3,4,5];
+        var array2 = [6,7,8,9,10];
+        console.log(array.concat(array2));
+        console.log(ham_mang(array));
+
+    </script>
+</body>
+</html>
