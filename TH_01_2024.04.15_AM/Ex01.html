@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [10, 9, 3, 4, 5, 4, 7, 2, 1];
+        function sortArray(array) {
+            var temp;
+            for (var i = 0; i < array.length; i++) {
+                for (var j = i + 1; j < array.length; j++) {
+                    if (array[i] > array[j]) {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            return array;
+        }
+        console.log(sortArray(array));
+        function loaiBoPhanTuTrung(array) {
+            var newArray = [];
+            for (var i = 0; i < array.length; i++) {
+                if (newArray.indexOf(array[i]) === -1) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray;
+        }
+        console.log(loaiBoPhanTuTrung(array));
+    </script>
+</body>
+</html>

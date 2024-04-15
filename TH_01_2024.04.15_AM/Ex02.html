@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [10, 9, 3, 4, 5, 4, 7, 2, 1];
+        function songuyenlonnhat(array) {
+            var max = array[0];
+            for (var i = 1; i < array.length; i++) {
+                if (max < array[i]) {
+                    max = array[i];
+                }
+            }
+            return max;
+        }
+        console.log(songuyenlonnhat(array));
+        function sochinhphuong(array) {
+            var newArray = [];
+            for (var i = 0; i < array.length; i++) {
+                if (Math.sqrt(array[i]) % 1 === 0) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray;
+        }
+        console.log(sochinhphuong(array));
+        function solonhontrungbinh(array) {
+            var sum = 0;
+            for (var i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            var avg = sum / array.length;
+            var newArray = [];
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] > avg) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray;
+        }
+        console.log(solonhontrungbinh(array));
+        function trungbinhcong(array) {
+            var sum = 0;
+            for (var i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            return sum / array.length;
+        }
+        console.log(trungbinhcong(array));
+    </script>
+</body>
+</html>
