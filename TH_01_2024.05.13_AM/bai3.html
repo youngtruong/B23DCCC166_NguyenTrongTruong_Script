@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     $("#next").click(function(){
+        //         $("#anh1").html('<img src="https://img6.thuthuatphanmem.vn/uploads/2022/01/26/hinh-nen-may-tinh-thanh-guom-diet-quy-4k_085128591.jpg" height="300" width="600">');
+        //     });
+        // });
+        // $(document).ready(function(){
+        //     $("#back").click(function(){
+        //         $('#anh1').html(' <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2022/03/1-17.jpg" height="300" width="600">');
+        //     });
+        // });
+        $(document).ready(function(){
+            var images = [
+                'https://cdn.sforum.vn/sforum/wp-content/uploads/2022/03/1-17.jpg',
+                'https://img6.thuthuatphanmem.vn/uploads/2022/01/26/hinh-nen-may-tinh-thanh-guom-diet-quy-4k_085128591.jpg'
+            ];
+            var index = 0;
+
+            function showImage(index) {
+                $('#anh1').html('<img src="' + images[index] + '" height="300" width="600">');
+            }
+
+            $("#next").click(function(){
+                index++;
+                if (index >= images.length) {
+                    index = 0;
+                }
+                showImage(index);
+            });
+
+            $("#back").click(function(){
+                index--;
+                if (index < 0) {
+                    index = images.length - 1;
+                }
+                showImage(index);
+            });
+
+            setInterval(function() {
+                $("#next").click();
+            }, 5000); 
+        });
+    </script>
+</head>
+<body>
+    <div id="anh1">
+        <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2022/03/1-17.jpg" height="300" width="600">
+    </div>    
+    <button type="button" id="back">Back</button>
+    <button type="button" id="next">Next</button>
+</body>
+</html> 
