@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Danh sách người dùng</h1>
+    <table>
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button id="load-data">Load data</button>
+    <h1>Tên người dùng mới</h1>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+            <td>Email</td>
+            <td><input type="text" id="email"></td>
+            <td>Phone</td>
+            <td><input type="text" id="phone"></td>
+            <td>Password</td>
+            <td><input type="text" id="password"></td>
+        </tr>
+    </table>
+    <button id="add">ADD</button>
+    <script>
+        $(document).ready(function() {
+            $('#load-data').click(function(){
+                $.ajax({
+                    url: "http://api.uduer.com/users",
+                    type:"GET",
+                    success : function(result){
+                        var data = result.data.users;
+                        console.log(data);
+                        var tbody = $('tbody');
+                        data.forEach(function(user){
+                            tbody.append('<tr><td>'+user.id+'</td><td>'+user.name+'</td><td>'+user.email+'</td><td>'+user.phone+'</td><td><button>Edit</button></td><td><button>Delete</button></td></tr>')
+                        })
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                })
+            });
+        });
+        $(document).ready(function() {
+            $('#add').click(function(){
+                
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var password = $('#password').val();
+
+                var newUser = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    password: password
+                }
+                $.ajax({
+                    url:"http://api.uduer.com/users",
+                    type: "POST",
+                    data: newUser,
+                    success :function(result){
+                        alert("Thêm mới người dùng thành công ! ");
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                })
+
+            })
+        });
+
+        
+    </script>
+</body>
+</html>
