@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài1 -->
+    <p id="title"></p>
+    <script>
+        document.getElementById("title").innerHTML = "Hello, DOM!";
+    </script>
+    <p id="text">Hello!!!</p>
+    <!-- Bài2 -->
+    <script>
+        document.getElementById("text").style.color = "red";
+    </script>
+    <!-- Bài3 -->
+    <script>
+        var list = document.getElementById("list");
+        var newItem = document.createElement("li");
+        newItem.innerHTML = "New Item";
+        list.appendChild(newItem);
+    </script>
+    <!-- Bài4 -->
+    <script>
+        var elementToRemove = document.getElementById("remove-me");
+        elementToRemove.parentNode.removeChild(elementToRemove);
+    </script>
+    
+    <!-- Bài5 -->
+    <script>
+        var imageElement = document.getElementById("image");
+        imageElement.src = "new_image.jpg";
+    </script>
+    <!-- Bài6 -->
+    <script>
+        document.getElementById("btn").addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+    </script>
+    <!-- Bài7 -->
+    <script>
+        var paragraphs = document.getElementsByTagName("p");
+        for (var i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = "Updated paragraph";
+        }
+    </script>
+    <!-- Bài8 -->
+    <script>
+        var tableContainer = document.getElementById("table-container");
+        var table = document.createElement("table");
+
+        for (var i = 0; i < 3; i++) {
+            var row = document.createElement("tr");
+
+            for (var j = 0; j < 3; j++) {
+                var cell = document.createElement("td");
+                cell.textContent = "Row " + (i + 1) + ", Column " + (j + 1);
+                row.appendChild(cell);
+            }
+
+            table.appendChild(row);
+        }
+
+        tableContainer.appendChild(table);
+    </script>
+    <!-- Bài9 -->
+    <script>
+        var divElements = document.getElementsByTagName("div");
+        var divCount = divElements.length;
+        console.log("Number of div elements: " + divCount);
+    </script>
+    <!-- Bài10 -->
+    <script>
+        var items = document.getElementsByClassName("item");
+        for (var i = 0; i < items.length; i++) {
+            items[i].innerHTML = "Updated item";
+        }
+    </script>
+</body>
+</html>
