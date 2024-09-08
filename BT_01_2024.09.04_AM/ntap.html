@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="ntap.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý sinh viên</h1>
+        <form id="student-form">
+            <input type="text" id="ma-sinh-vien" placeholder="Mã sinh viên" required>
+            <input type="text" id="ho-ten" placeholder="Họ và tên" required>
+            <select id="gioi-tinh" required>
+                <option value="">Giới tính</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+            <input type="date" id="ngay-sinh" required>
+            <input type="text" id="que-quan" placeholder="Quê quán" required>
+            <button type="submit">Thêm/Cập nhật sinh viên</button>
+        </form>
+
+        <table id="bang-sinh-vien">
+            <thead>
+                <tr>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Quê quán</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dòng sinh viên sẽ hiển thị tại đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="ntap.js"></script>
+</body>
+</html>
